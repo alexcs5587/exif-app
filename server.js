@@ -46,7 +46,10 @@ app.post('/result', function (req, res) {
 						latitude = "";
 						longitude = "";
 					}
-					res.render('display', { title: title, description: description, mimetype: file.mimetype, data: file.data.toString('base64'), make: make, model: model, created: created, latitude: latitude, longitude: longitude });
+					if (make || model || created || latitude || longitude)
+						res.render('display', { title: title, description: description, mimetype: file.mimetype, data: file.data.toString('base64'), make: make, model: model, created: created, latitude: latitude, longitude: longitude });
+					else
+						res.render('message', { title: 'Error', msg: 'No Exif segment found in the given image.' });
 				}
 			});
 		} catch (error) {
