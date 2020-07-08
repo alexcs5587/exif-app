@@ -1,0 +1,16 @@
+{
+    "name": "exif-app",
+    "description": "exif-app",
+    "author": "AlexChui",
+    "version": "1.0.0",
+    "dependencies": {
+        "express": "*",
+        "express-fileupload": "*",
+        "ejs": "*",
+        "exif": "latest"
+    },
+    "engine": "*",
+    "scripts": {
+        "start": "node server.js"
+    }
+}
